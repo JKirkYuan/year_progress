@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 import styled, { injectGlobal } from 'styled-components';
 import { Line } from 'rc-progress';
 import moment from 'moment';
+import unsplash from 'unsplash-api';
+
+const API_KEY = process.env.API_KEY;
+
+/*var clientId = API_KEY;
+unsplash.init(clientId);
+unsplash.getUserByName('@jkyuan', (error, photos) => {
+  console.log(photos);
+}); */
 
 const gradients = [
   'background:linear-gradient(135deg, #CE9FFC 0%,#7367F0 100%);',
@@ -40,13 +49,13 @@ const CenterDiv = styled.div`
 `;
 
 const Header = styled.div`
-  font-family: 'Raleway', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   color: #ffffff;
   font-size: 200%;
 `
 
 const Percent = styled.div`
-  font-family: 'Source Code Pro', monospace;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   color: #ffffff;
   white-space: pre-wrap;
   font-size: 125%;
@@ -70,6 +79,14 @@ const AuthorDiv = styled.div`
   bottom: 0;
   margin: 0 1% 1% 0;
   width: 18%;
+  color: #ffffff;
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+`;
+
+const RealAuthorDiv = styled.div`
   color: #ffffff;
   a {
     color: #ffffff;
@@ -120,7 +137,7 @@ class App extends Component {
     return (
       <CenterDiv>
         <Header>
-          <h1>Year Progress</h1>
+          <h2>Year Progress</h2>
         </Header>
         <Line 
           percent={this.state.perc}
@@ -133,15 +150,18 @@ class App extends Component {
           Some
         </Line>
         <Percent>
-          <h1>{`${this.state.percent} %`}</h1>
+          <p>{`${this.state.percent} %`}</p>
         </Percent>
         <DateDiv>
           <div>
             {moment().format("dddd, MMMM Do YYYY, HH:mm:ss")}
           </div>
         </DateDiv>
-        <AuthorDiv>
+        <RealAuthorDiv>
           <a href="https://twitter.com/Mubaris_NK" target="_blank" rel="noopener noreferrer">Made with ♥ by Mubaris NK</a>
+        </RealAuthorDiv>
+        <AuthorDiv>
+        <a href="https://twitter.com/kirkyuan" target="_blank" rel="noopener noreferrer">Customized with ♥ by Kirk Yuan</a>
         </AuthorDiv>
       </CenterDiv>
     );
@@ -149,8 +169,6 @@ class App extends Component {
 }
 
 injectGlobal`
-  @import url('https://fonts.googleapis.com/css?family=Raleway');
-  @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
 
   html, body {
     height: 100%;
