@@ -18,7 +18,7 @@ Checkout [Product Hunt](https://www.producthunt.com/posts/year-progress)
 
 ## Developement
 
-`git clone https://github.com/mubaris/year_progress.git`
+`git clone https://github.com/JKirkYuan/year_progress.git`
 
 `cd year_progress`
 
@@ -37,4 +37,4 @@ Checkout [Product Hunt](https://www.producthunt.com/posts/year-progress)
 
 ## Screenshots
 
-![Screenshot](https://i.imgur.com/fD9UEXT.png)
+![Screenshot](Screenshot.png)
