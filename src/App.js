@@ -25,7 +25,7 @@ const gradients = [
   'background:linear-gradient(135deg, #fcdf8a 0%,#f38381 100%);'
 ];
 
-const gradient = 'background-image: url("https://picsum.photos/2560/1600/?random")';
+const gradient = 'background-image: url("https://source.unsplash.com/collection/176316/1650x1080")';
 
 
 const CenterDiv = styled.div`
