@@ -2,16 +2,12 @@ import React, { Component } from 'react';
 import styled, { injectGlobal } from 'styled-components';
 import { Line } from 'rc-progress';
 import moment from 'moment';
-import unsplash from 'unsplash-api';
+import Unsplash, { toJson }  from 'unsplash-js';
+import axios from 'axios';
 
-const API_KEY = process.env.API_KEY;
-
-/*var clientId = API_KEY;
-unsplash.init(clientId);
-unsplash.getUserByName('@jkyuan', (error, photos) => {
-  console.log(photos);
-}); */
-
+function fetchPhoto() {
+  return axios.get('https://picsum.photos/1650/1080/?blur')
+}
 const gradients = [
   'background:linear-gradient(135deg, #CE9FFC 0%,#7367F0 100%);',
   'background:linear-gradient(135deg, #b1ea4d 0%,#459522 100%);',
@@ -34,7 +30,7 @@ const gradients = [
   'background:linear-gradient(135deg, #fcdf8a 0%,#f38381 100%);'
 ];
 
-const gradient = gradients[Math.floor(Math.random()*gradients.length)];
+const gradient = 'background-image: url("https://picsum.photos/2560/1600/?random")';
 
 
 const CenterDiv = styled.div`

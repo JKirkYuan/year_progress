@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
     "dotenv": "^5.0.1",
     "moment": "^2.22.0",
     "radium": "^0.24.0",
@@ -12,7 +13,8 @@
     "react-dom": "^16.3.1",
     "react-scripts": "1.1.4",
     "styled-components": "^3.2.5",
-    "unsplash-api": "^1.2.0"
+    "unsplash-api": "^1.2.0",
+    "unsplash-js": "^4.8.0"
   },
   "scripts": {
     "start": "react-scripts start",
