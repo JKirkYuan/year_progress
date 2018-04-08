@@ -3,8 +3,22 @@ import styled, { injectGlobal } from 'styled-components';
 import { Line } from 'rc-progress';
 import moment from 'moment';
 
-const gradient = 'background-image: url("https://source.unsplash.com/collection/176316/1650x1080")';
+let offset = new Date();
+let hours = offset.getHours();
+var gradient = 'background-image: url("https://source.unsplash.com/collection/176316/1650x1080")';
 
+if(hours >= 20){
+  var gradient = 'background-image: url("https://source.unsplash.com/collection/782142/")';
+}
+else if (hours <= 12){
+  var gradient = 'background-image: url("https://source.unsplash.com/collection/539016/1650x1080")';
+}
+else if (hours <= 20 && hours > 12 ) {
+  var gradient = 'background-image: url("https://source.unsplash.com/collection/1301453/1650x1080")';
+}
+else{
+  var gradient = 'background-image: url("https://source.unsplash.com/collection/176316/1650x1080")';
+}
 
 const CenterDiv = styled.div`
   height: 100%;
@@ -14,7 +28,9 @@ const CenterDiv = styled.div`
   align-items: center;
   flex-direction: column;
   position: relative;
-  ${gradient}
+  ${gradient};
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 const Header = styled.div`
@@ -43,11 +59,9 @@ const DateDiv = styled.div`
 const AuthorDiv = styled.div`
   display: flex;
   position: absolute;
-  left: 85%;
-  right: 0%;
+  right: 0;
   bottom: 0;
   margin: 0 1% 1% 0;
-  width: 18%;
   color: #ffffff;
   a {
     font-size: 0.8rem;
