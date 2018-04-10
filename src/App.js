@@ -8,7 +8,7 @@ let hours = offset.getHours();
 var gradient = 'background-image: url("https://source.unsplash.com/collection/176316/1650x1080")';
 
 if(hours >= 20){
-  var gradient = 'background-image: url("https://source.unsplash.com/collection/782142/")';
+  var gradient = 'background-image: url("https://source.unsplash.com/collection/540518/1650x1080")';
 }
 else if (hours <= 12){
   var gradient = 'background-image: url("https://source.unsplash.com/collection/539016/1650x1080")';
@@ -49,6 +49,7 @@ const Percent = styled.div`
 const DateDiv = styled.div`
   display: flex;
   position: absolute;
+  font-size: 0.8rem;
   left: 0;
   right: 0;
   bottom: 0;
